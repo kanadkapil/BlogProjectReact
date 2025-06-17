@@ -7,6 +7,27 @@
     "summary": "Learn the basics of React including components, props, and JSX.",
     "content": "React is a JavaScript library for building user interfaces...",
     "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg",
-    "tags": ["React", "JavaScript", "Frontend"]
+    "tags": ["React", "Frontend"]
+  },
+  {
+    "id": 2,
+    "title": "Getting Started with React",
+    "authorID": "2",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://images.pexels.com/photos/19837616/pexels-photo-19837616.jpeg",
+    "tags": ["React", "JavaScript"]
+  },
+  {
+    "id": 3,
+    "title": "Getting Started with React",
+    "authorID": "3",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://images.pexels.com/photos/13518968/pexels-photo-13518968.jpeg",
+    "tags": ["JavaScript", "Frontend"]
   }
+
 ]
