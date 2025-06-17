@@ -33,7 +33,7 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="max-w-3xl mx-auto bg-base-100 shadow p-6 rounded-lg my-6">
+        <div className="max-w-3xl mx-auto bg-zinc-900 shadow p-6 rounded-lg my-6">
             <img
                 src={blog.coverImg}
                 alt={blog.title}

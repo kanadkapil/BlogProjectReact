@@ -8,31 +8,21 @@ import CategoryPage from './pages/CategoryPage';
 import AuthorsList from './pages/AuthorsList';
 import AuthorProfile from './pages/AuthorProfile';
 import AuthorPostsPage from './pages/AuthorPostPage';
-import Beams from './components/Beams'; // ✅ Beams component
 
 function App() {
     return (
-        <div className="relative min-h-screen overflow-hidden">
-            {/* 🔴 Beams Background */}
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Beams
-                    beamWidth={2.7}
-                    beamHeight={25}
-                    beamNumber={29}
-                    lightColor="#ffffff"
-                    speed={6}
-                    noiseIntensity={3.75}
-                    scale={0.4}
-                    rotation={95}
-                />
-            </div>
-
+        <div
+            className="min-h-screen bg-cover bg-center bg-no-repeat"
+            style={{
+                backgroundImage: "url('https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg')",
+            }}
+        >
             <Router>
-                {/* 🔵 Navbar stays above the background */}
+                {/* 🔵 Navbar */}
                 <Navbar />
 
                 {/* 🔵 Page content */}
-                <div className="container mx-auto px-4 py-6 relative z-10">
+                <div className="container mx-auto px-4 py-6 my-5 backdrop-blur-sm min-h-screen rounded-xl shadow-md">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/blog/:id" element={<BlogDetails />} />

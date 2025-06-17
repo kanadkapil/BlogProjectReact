@@ -17,7 +17,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className="navbar bg-base-100 shadow-md z-50 sticky top-0">
+        <div className="navbar backdrop-blur-sm shadow-md z-50 sticky top-0">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost normal-case text-2xl">📝 Mini Blog</Link>
             </div>

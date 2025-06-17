@@ -28,7 +28,7 @@ const AuthorProfile = () => {
     }
 
     return (
-        <div className="max-w-4xl mx-auto bg-base-100 p-6 rounded-xl shadow-lg mt-6">
+        <div className="max-w-4xl mx-auto bg-zinc-900 p-6 rounded-xl shadow-lg mt-6">
             <div className="flex flex-col md:flex-row gap-6 items-center">
                 <img
                     src={author.picA}
