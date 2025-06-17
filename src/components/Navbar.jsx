@@ -17,33 +17,35 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className="navbar bg-base-100 shadow-md">
+        <div className="navbar bg-base-100 shadow-md z-50 sticky top-0">
             <div className="flex-1">
-                <Link to="/" className="btn btn-ghost text-xl">📝 Mini Blog</Link>
+                <Link to="/" className="btn btn-ghost normal-case text-2xl">📝 Mini Blog</Link>
             </div>
 
-            <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/authors">Authors</Link></li>
+            <div className="flex-none gap-4">
+                <Link to="/" className="btn btn-ghost">Home</Link>
+                <Link to="/authors" className="btn btn-ghost">Authors</Link>
 
-                    <li>
-                        <details>
-                            <summary>Categories</summary>
-                            <ul className="p-2 bg-base-100 shadow z-10">
-                                {tags.length > 0 ? (
-                                    tags.map((tag, index) => (
-                                        <li key={index}>
-                                            <Link to={`/category/${tag}`}>#{tag}</Link>
-                                        </li>
-                                    ))
-                                ) : (
-                                    <li><span className="text-xs text-gray-400 px-2">No tags</span></li>
-                                )}
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
+                {/* Categories Dropdown */}
+                <div className="dropdown dropdown-end z-[50]">
+                    <label tabIndex={0} className="btn btn-ghost">
+                        Categories
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 max-h-64 overflow-y-auto z-[50]"
+                    >
+                        {tags.length > 0 ? (
+                            tags.map((tag, index) => (
+                                <li key={index}>
+                                    <Link to={`/category/${tag}`}>#{tag}</Link>
+                                </li>
+                            ))
+                        ) : (
+                            <li><span className="text-xs text-gray-400 px-2">No tags</span></li>
+                        )}
+                    </ul>
+                </div>
             </div>
         </div>
     );
