@@ -1,0 +1,21 @@
+[
+    {
+        "authorID": "01",
+        "name": "Kanad Kapil",
+        "work": "Writer",
+        "profession": "Student",
+        "company": "LPU",
+        "designation": "B.Tech, CSE, Final Year",
+        "picA": "https://kanadkapil.github.io/Personal-Portfolio-Live/PicA.png",
+        "github": "https://github.com/kanadkapil",
+        "linkedin": "https://www.linkedin.com/in/kanadkapil/",
+        "gmail": "mailto:kanad.kapil@gmail.com",
+        "insta": "https://www.instagram.com/kanad.kapil/",
+        "fb": "https://www.facebook.com/kanad.kapil/",
+        "youtube": "https://www.youtube.com/@kanadkapil",
+        "spotify": "https://open.spotify.com/embed/track/3vkCueOmm7xQDoJ17W1Pm3?utm_source=generator",
+        "about": "I'm a writer and final-year CSE student passionate about tech and creativity.",
+        "details": "I like building web apps, writing blogs, and making music playlists in my free time.",
+        "isActive": true
+    }
+]

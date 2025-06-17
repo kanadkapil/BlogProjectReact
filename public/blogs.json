@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with React",
+    "authorID": "01",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://source.unsplash.com/random/800x400/?react"
+  },
+  {
+    "id": 2,
+    "title": "Using Hooks in React",
+    "authorID": "01",
+    "date": "2025-06-16",
+    "summary": "Understand how useState and useEffect work in functional components.",
+    "content": "Hooks let you use state and other React features without writing a class...",
+    "coverImg": "https://source.unsplash.com/random/800x400/?hooks"
+  },
+  {
+    "id": 3,
+    "title": "React Router DOM for Beginners",
+    "authorID": "01",
+    "date": "2025-06-15",
+    "summary": "Navigate between pages in your React app using React Router DOM.",
+    "content": "React Router DOM is a routing library built on top of React Router...",
+    "coverImg": "https://source.unsplash.com/random/800x400/?router"
+  }
+]
