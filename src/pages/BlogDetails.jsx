@@ -20,7 +20,9 @@ const BlogDetails = () => {
             fetch('/authors.json')
                 .then((res) => res.json())
                 .then((data) => {
-                    const found = data.find((a) => a.authorID === blog.authorID && a.isActive === "true");
+                    // const found = data.find((a) => a.authorID === blog.authorID && a.isActive === "true");
+                    const found = data.find(a => a.authorID === blog.authorID && a.isActive);
+
                     if (found) setAuthor(found);
                 });
         }
