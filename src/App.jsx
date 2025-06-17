@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import CategoryPage from './pages/CategoryPage';
 import AuthorsList from './pages/AuthorsList';
 import AuthorProfile from './pages/AuthorProfile';
+import AuthorPostsPage from './pages/AuthorPostPage';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/blog/:id" element={<BlogDetails />} />
                     <Route path="*" element={<NotFound />} /> {/* ⬅️ Catch-all route */}
                     <Route path="/author/:authorID" element={<AuthorProfile />} />
+                    <Route path="/author/:authorID/posts" element={<AuthorPostsPage />} />
 
                     <Route path="/authors" element={<AuthorsList />} />
 

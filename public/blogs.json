@@ -10,6 +10,36 @@
     "tags": ["React", "Frontend"]
   },
   {
+    "id": 4,
+    "title": "Getting Started with for React***",
+    "authorID": "01",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg",
+    "tags": ["React", "Frontend"]
+  },
+  {
+    "id": 5,
+    "title": "Getting Started with for React***",
+    "authorID": "01",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg",
+    "tags": ["React", "Frontend"]
+  },
+  {
+    "id": 6,
+    "title": "Getting Started with for React***",
+    "authorID": "01",
+    "date": "2025-06-17",
+    "summary": "Learn the basics of React including components, props, and JSX.",
+    "content": "React is a JavaScript library for building user interfaces...",
+    "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg",
+    "tags": ["React", "Frontend"]
+  },
+  {
     "id": 2,
     "title": "Getting Started with React",
     "authorID": "2",

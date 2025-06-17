@@ -92,6 +92,10 @@ const AuthorProfile = () => {
             <div className="mt-8 text-right">
                 <Link to="/" className="btn btn-primary">⬅ Back to Home</Link>
             </div>
+            <Link to={`/author/${author.authorID}/posts`} className="btn btn-outline mt-6">
+                📚 All Posts
+            </Link>
+
         </div>
     );
 };
