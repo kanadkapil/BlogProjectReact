@@ -20,7 +20,7 @@ const AuthorsList = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {authors.map((author) => (
                     <Link to={`/author/${author.authorID}`} key={author.authorID}>
-                        <div className="card bg-base-100 shadow hover:shadow-lg transition-all duration-300 border">
+                        <div className="card bg-zinc-900 shadow hover:shadow-lg transition-all duration-300 border">
                             <figure className="px-4 pt-4">
                                 <img
                                     src={author.picA}
