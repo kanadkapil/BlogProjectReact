@@ -37,16 +37,32 @@ const AuthorProfile = () => {
                 />
                 <div>
                     <h1 className="text-3xl font-bold">{author.name}</h1>
-                    <p className="text-sm text-gray-500">{author.designation} @ {author.company}</p>
-                    <p className="mt-2">{author.work} | {author.profession}</p>
+                    <p className="text-sm text-gray-500">
+                        {author.designation} @ {author.company}
+                    </p>
+                    <p className="mt-2">
+                        {author.work} | {author.profession}
+                    </p>
 
                     <div className="mt-4 flex flex-wrap gap-3">
-                        {author.github && <a href={author.github} className="btn btn-sm btn-outline" target="_blank">GitHub</a>}
-                        {author.linkedin && <a href={author.linkedin} className="btn btn-sm btn-outline" target="_blank">LinkedIn</a>}
-                        {author.gmail && <a href={author.gmail} className="btn btn-sm btn-outline">Gmail</a>}
-                        {author.insta && <a href={author.insta} className="btn btn-sm btn-outline">Instagram</a>}
-                        {author.fb && <a href={author.fb} className="btn btn-sm btn-outline">Facebook</a>}
-                        {author.youtube && <a href={author.youtube} className="btn btn-sm btn-outline">YouTube</a>}
+                        {author.github && author.showGithub && (
+                            <a href={author.github} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">GitHub</a>
+                        )}
+                        {author.linkedin && author.showLinkedIn && (
+                            <a href={author.linkedin} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">LinkedIn</a>
+                        )}
+                        {author.gmail && author.showGmail && (
+                            <a href={`mailto:${author.gmail}`} className="btn btn-sm btn-outline">Gmail</a>
+                        )}
+                        {author.insta && author.showInsta && (
+                            <a href={author.insta} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">Instagram</a>
+                        )}
+                        {author.fb && author.showFb && (
+                            <a href={author.fb} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">Facebook</a>
+                        )}
+                        {author.youtube && author.showYoutube && (
+                            <a href={author.youtube} className="btn btn-sm btn-outline" target="_blank" rel="noreferrer">YouTube</a>
+                        )}
                     </div>
                 </div>
             </div>
@@ -59,7 +75,7 @@ const AuthorProfile = () => {
                 <p className="text-base mt-2">{author.details}</p>
             </div>
 
-            {author.spotify && (
+            {author.spotify && author.showSpotify && (
                 <div className="mt-6">
                     <h2 className="text-xl font-semibold mb-2">🎵 Favorite Track</h2>
                     <iframe
