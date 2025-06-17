@@ -6,24 +6,7 @@
     "date": "2025-06-17",
     "summary": "Learn the basics of React including components, props, and JSX.",
     "content": "React is a JavaScript library for building user interfaces...",
-    "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg"
-  },
-  {
-    "id": 2,
-    "title": "Using Hooks in React",
-    "authorID": "01",
-    "date": "2025-06-16",
-    "summary": "Understand how useState and useEffect work in functional components.",
-    "content": "Hooks let you use state and other React features without writing a class...",
-    "coverImg": "https://images.pexels.com/photos/31173336/pexels-photo-31173336.jpeg"
-  },
-  {
-    "id": 3,
-    "title": "React Router DOM for Beginners",
-    "authorID": "01",
-    "date": "2025-06-15",
-    "summary": "Navigate between pages in your React app using React Router DOM.",
-    "content": "React Router DOM is a routing library built on top of React Router...",
-    "coverImg": "https://images.pexels.com/photos/19837616/pexels-photo-19837616.jpeg"
+    "coverImg": "https://images.pexels.com/photos/12352497/pexels-photo-12352497.jpeg",
+    "tags": ["React", "JavaScript", "Frontend"]
   }
 ]

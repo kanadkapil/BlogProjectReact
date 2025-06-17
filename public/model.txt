@@ -1,0 +1,21 @@
+[
+    {
+        "authorID": "",
+        "name": "",
+        "work": "",
+        "profession": "",
+        "company": "",
+        "designation": "",
+        "picA": "",
+        "github": "",
+        "linkedin": "",
+        "gmail": "",
+        "insta": "",
+        "fb": "",
+        "youtube": "",
+        "spotify": "",
+        "about": "I'm a writer and final-year CSE student passionate about tech and creativity.",
+        "details": "I like building web apps, writing blogs, and making music playlists in my free time.",
+        "isActive": true
+    }
+]
