@@ -19,7 +19,7 @@ const Navbar = () => {
     return (
         <div className="navbar backdrop-blur-sm shadow-md z-50 sticky top-0">
             <div className="flex-1">
-                <Link to="/" className="btn btn-ghost normal-case text-md sm:text-3xl">📝 Mini Blog</Link>
+                <Link to="/" className="btn btn-ghost normal-case text-xl sm:text-3xl">📝 Blog</Link>
             </div>
 
             <div className="flex-none gap-4">
