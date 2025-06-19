@@ -20,20 +20,20 @@ const AuthorsList = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {authors.map((author) => (
                     <Link to={`/author/${author.authorID}`} key={author.authorID}>
-                        <div className="card bg-zinc-900 shadow hover:shadow-lg transition-all duration-300 border">
+                        <div className="card bg-zinc-900 hover:scale-102 shadow hover:shadow-lg transition-all duration-300 border-black">
                             <figure className="px-4 pt-4">
                                 <img
                                     src={author.picA}
                                     alt={author.name}
-                                    className="rounded-full w-32 h-32 object-cover border-4 border-primary"
+                                    className="rounded-full w-40 h-40 object-cover hover:contrast-125 transition-all duration-300"
                                 />
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">{author.name}</h2>
+                                <h1 className="card-title text-3xl">{author.name}</h1>
                                 <p className="text-sm text-gray-500">{author.designation}</p>
                                 <p className="text-sm text-gray-600">{author.work}</p>
                                 <div className="card-actions mt-4">
-                                    <button className="btn btn-sm btn-outline">View Profile</button>
+                                    <button className="btn btn-sm btn-outline hover:bg-lime-400 hover:text-black">View Profile</button>
                                 </div>
                             </div>
                         </div>

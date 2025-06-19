@@ -14,7 +14,7 @@ const BlogCard = ({ blog }) => {
     }, [blog.authorID]);
 
     return (
-        <div className="card bg-zinc-900 shadow-md border hover:shadow-xl transition duration-300">
+        <div className="card bg-zinc-900 shadow-md hover:shadow-xl transition hover:contrast-105 hover:scale-102 duration-300">
             <figure>
                 <img
                     src={blog.coverImg}
@@ -58,7 +58,7 @@ const BlogCard = ({ blog }) => {
                 
 
                 <div className="card-actions justify-end mt-4">
-                    <Link to={`/blog/${blog.id}`} className="btn btn-primary btn-sm">
+                    <Link to={`/blog/${blog.id}`} className="btn bg-lime-600 text-black btn-sm">
                         Read More
                     </Link>
                 </div>
