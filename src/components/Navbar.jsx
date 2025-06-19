@@ -25,7 +25,7 @@ const Navbar = () => {
         isActive ? 'bg-lime-600 text-black font-semibold rounded-md px-3 py-1' : 'px-3 py-1';
 
     return (
-        <div className="navbar backdrop-blur-sm shadow-md z-50 sticky top-0">
+        <div className="navbar backdrop-blur-sm bg-black/30 shadow-md z-50 sticky top-0">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost normal-case text-lg sm:text-3xl">📝 Blog</Link>
             </div>

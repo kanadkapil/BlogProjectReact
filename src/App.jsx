@@ -12,17 +12,16 @@ import AuthorPostsPage from './pages/AuthorPostPage';
 function App() {
     return (
         <div
-            className="min-h-screen bg-cover bg-center bg-no-repeat"
+            className="min-h-screen bg-cover bg-center bg-no-repeat bg-black"
             style={{
-                backgroundImage: "url('https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg')",
+                backgroundImage:
+                    "url('https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg')",
             }}
         >
             <Router>
-                {/* 🔵 Navbar */}
                 <Navbar />
 
-                {/* 🔵 Page content */}
-                <div className="container mx-auto px-4 py-6 my-5 backdrop-blur-sm min-h-screen rounded-xl shadow-md">
+                <div className="max-w-7xl mx-auto px-4 py-6 my-5 backdrop-blur-sm min-h-[80vh] rounded-xl shadow-lg bg-black/30">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/blog/:id" element={<BlogDetails />} />
@@ -34,7 +33,6 @@ function App() {
                     </Routes>
                 </div>
 
-                {/* 🔵 Footer */}
                 <Footer />
             </Router>
         </div>
