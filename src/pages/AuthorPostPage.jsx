@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import BlogCard from '../components/BlogCard';
 
-const POSTS_PER_PAGE = 2;
+const POSTS_PER_PAGE = 9;
 
 const AuthorPostsPage = () => {
     const { authorID } = useParams();
@@ -14,28 +14,39 @@ const AuthorPostsPage = () => {
         fetch('/authors.json')
             .then((res) => res.json())
             .then((data) => {
-                const found = data.find((a) => a.authorID === authorID);
-                setAuthor(found);
-            });
+                setAuthor(data.find(a => a.authorID === authorID) || null);
+            })
+            .catch(console.error);
     }, [authorID]);
 
     useEffect(() => {
         fetch('/blogs.json')
             .then((res) => res.json())
             .then((data) => {
-                const filtered = data.filter((blog) => blog.authorID === authorID);
-                setBlogs(filtered);
-            });
+                // ✅ Fetch only posts by this author
+                setBlogs(data.filter(blog => blog.authorID === authorID));
+            })
+            .catch(console.error);
     }, [authorID]);
 
-    const totalPages = Math.ceil(blogs.length / POSTS_PER_PAGE);
-    const visibleBlogs = blogs.slice(
-        (currentPage - 1) * POSTS_PER_PAGE,
-        currentPage * POSTS_PER_PAGE
+    // ✅ Use memo to avoid recalculating pages
+    const totalPages = useMemo(
+        () => Math.ceil(blogs.length / POSTS_PER_PAGE),
+        [blogs]
+    );
+
+    const visibleBlogs = useMemo(
+        () => blogs.slice(
+            (currentPage - 1) * POSTS_PER_PAGE,
+            currentPage * POSTS_PER_PAGE
+        ),
+        [blogs, currentPage]
     );
 
     if (!author) {
-        return <div className="text-center py-10 text-xl">Author not found.</div>;
+        return (
+            <div className="text-center py-10 text-xl">Author not found.</div>
+        );
     }
 
     return (
@@ -44,7 +55,7 @@ const AuthorPostsPage = () => {
                 Posts by {author.name}
             </h1>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-3">
                 {visibleBlogs.map((blog) => (
                     <BlogCard key={blog.id} blog={blog} />
                 ))}
@@ -52,13 +63,13 @@ const AuthorPostsPage = () => {
 
             {totalPages > 1 && (
                 <div className="flex justify-center mt-6 gap-2">
-                    {Array.from({ length: totalPages }, (_, i) => (
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                         <button
-                            key={i}
-                            onClick={() => setCurrentPage(i + 1)}
-                            className={`btn btn-sm ${currentPage === i + 1 ? "btn-primary" : "btn-outline"}`}
+                            key={page}
+                            onClick={() => setCurrentPage(page)}
+                            className={`btn btn-sm ${currentPage === page ? 'btn-primary' : 'btn-outline'}`}
                         >
-                            {i + 1}
+                            {page}
                         </button>
                     ))}
                 </div>

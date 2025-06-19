@@ -1,5 +1,6 @@
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -8,23 +9,23 @@ const BlogDetails = () => {
 
     useEffect(() => {
         fetch('/blogs.json')
-            .then((res) => res.json())
-            .then((data) => {
-                const found = data.find((b) => b.id === parseInt(id));
-                setBlog(found);
-            });
+            .then(res => res.json())
+            .then(data => {
+                const found = data.find(b => b.id === parseInt(id));
+                setBlog(found || null);
+            })
+            .catch(console.error);
     }, [id]);
 
     useEffect(() => {
         if (blog?.authorID) {
             fetch('/authors.json')
-                .then((res) => res.json())
-                .then((data) => {
-                    // const found = data.find((a) => a.authorID === blog.authorID && a.isActive === "true");
+                .then(res => res.json())
+                .then(data => {
                     const found = data.find(a => a.authorID === blog.authorID && a.isActive);
-
-                    if (found) setAuthor(found);
-                });
+                    setAuthor(found || null);
+                })
+                .catch(console.error);
         }
     }, [blog]);
 
@@ -34,9 +35,11 @@ const BlogDetails = () => {
 
     return (
         <div className="max-w-3xl mx-auto bg-zinc-900 shadow p-6 rounded-lg my-6">
+            {/* ✅ Image placed first for LCP */}
             <img
                 src={blog.coverImg}
                 alt={blog.title}
+                loading="lazy" // ✅ Lazy load image
                 className="w-full h-64 object-cover rounded-md mb-4"
             />
             <h1 className="text-4xl font-bold mb-2">{blog.title}</h1>

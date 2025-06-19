@@ -16,7 +16,11 @@ const BlogCard = ({ blog }) => {
     return (
         <div className="card bg-zinc-900 shadow-md hover:shadow-xl transition hover:contrast-105 hover:scale-102 duration-300">
             <figure>
+                {/* ✅ Lazy load image + hint modern formats */}
                 <img
+                    loading="lazy"
+                    fetchpriority="low"
+                    decoding="async"
                     src={blog.coverImg}
                     alt={blog.title}
                     className="w-full h-48 object-cover"
@@ -41,7 +45,7 @@ const BlogCard = ({ blog }) => {
                 <p>{blog.summary}</p>
 
                 {/* Tags */}
-                {blog.tags && blog.tags.length > 0 && (
+                {blog.tags?.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-2">
                         {blog.tags.map((tag, i) => (
                             <Link
@@ -54,8 +58,6 @@ const BlogCard = ({ blog }) => {
                         ))}
                     </div>
                 )}
-                {console.log(blog)}
-                
 
                 <div className="card-actions justify-end mt-4">
                     <Link to={`/blog/${blog.id}`} className="btn bg-lime-600 text-black btn-sm">

@@ -8,9 +8,13 @@ const AuthorsList = () => {
         fetch('/authors.json')
             .then((res) => res.json())
             .then((data) => {
-                const visibleAuthors = data.filter((author) => author.isActive === true || author.isActive === "true");
+                // ✅ Filter active authors, handle boolean or string
+                const visibleAuthors = data.filter(
+                    (a) => a.isActive === true || a.isActive === "true"
+                );
                 setAuthors(visibleAuthors);
-            });
+            })
+            .catch(console.error);
     }, []);
 
     return (
@@ -22,10 +26,13 @@ const AuthorsList = () => {
                     <Link to={`/author/${author.authorID}`} key={author.authorID}>
                         <div className="card bg-zinc-900 hover:scale-102 shadow hover:shadow-lg transition-all duration-300 hover:contrast-105 border-black">
                             <figure className="px-4 pt-4">
+                                {/* ✅ Lazy load author images */}
                                 <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src={author.picA}
                                     alt={author.name}
-                                    className="rounded-full w-40 h-40 object-cover "
+                                    className="rounded-full w-40 h-40 object-cover"
                                 />
                             </figure>
                             <div className="card-body items-center text-center">
@@ -33,7 +40,9 @@ const AuthorsList = () => {
                                 <p className="text-sm text-gray-500">{author.designation}</p>
                                 <p className="text-sm text-gray-600">{author.work}</p>
                                 <div className="card-actions mt-4">
-                                    <button className="btn btn-sm btn-outline hover:bg-lime-400 hover:text-black">View Profile</button>
+                                    <button className="btn btn-sm btn-outline hover:bg-lime-400 hover:text-black">
+                                        View Profile
+                                    </button>
                                 </div>
                             </div>
                         </div>
