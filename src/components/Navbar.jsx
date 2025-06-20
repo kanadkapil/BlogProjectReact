@@ -121,20 +121,33 @@ const Navbar = () => {
                 {/* Desktop Profile/Login */}
                 {user ? (
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-circle avatar">
+                        <div
+                            tabIndex={0}
+                            className="btn btn-circle avatar hover:scale-105 transition-transform duration-200"
+                        >
                             <div className="w-10 rounded-full ring ring-lime-600 ring-offset-base-100 ring-offset-2">
                                 <img
                                     src={authorData?.picA || '/default-avatar.png'}
                                     alt="profile"
                                 />
                             </div>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-4 shadow bg-black/80 rounded-box w-52">
-                            <li><Link to={`/author/${user.authorID}`}>👤 View Profile</Link></li>
-                            <li><Link to={`/author/${user.authorID}/posts`}>📚 All Posts</Link></li>
-                            <li><button onClick={() => logout()}>🚪 Logout</button></li>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content mt-3 z-[60] p-4 shadow bg-black/80 rounded-box w-52"
+                        >
+                            <li>
+                                <Link to={`/author/${user.authorID}`}>👤 View Profile</Link>
+                            </li>
+                            <li>
+                                <Link to={`/author/${user.authorID}/posts`}>📚 All Posts</Link>
+                            </li>
+                            <li>
+                                <button onClick={() => logout()}>🚪 Logout</button>
+                            </li>
                         </ul>
                     </div>
+
                 ) : (
                     <Link to="/login" className="btn btn-sm btn-outline">Sign In</Link>
                 )}

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { login } = useContext(AuthContext);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('guest@x.com'); // Sample email
+    const [password, setPassword] = useState('x123');  // Sample password
     const [showPassword, setShowPassword] = useState(false);
     const [remember, setRemember] = useState(false);
     const [error, setError] = useState('');
@@ -65,6 +65,11 @@ const Login = () => {
                 {error && <p className="text-red-500 text-sm">{error}</p>}
 
                 <button type="submit" className="btn btn-primary w-full">Login</button>
+
+                {/* Optional: Show sample credentials note */}
+                <p className="text-xs text-center text-gray-400 mt-2">
+                    Use <strong>guest@x.com</strong> / <strong>x123</strong> to login
+                </p>
             </form>
         </div>
     );
