@@ -64,10 +64,10 @@ const Login = () => {
 
                 {error && <p className="text-red-500 text-sm">{error}</p>}
 
-                <button type="submit" className="btn btn-primary w-full">Login</button>
+                <button type="submit" className="btn bg-lime-600 text-black hover:bg-lime-700 w-full">Login</button>
 
                 {/* Optional: Show sample credentials note */}
-                <p className="text-xs text-center text-gray-400 mt-2">
+                <p className="text-xs text-center mt-2">
                     Use <strong>guest@x.com</strong> / <strong>x123</strong> to login
                 </p>
             </form>
