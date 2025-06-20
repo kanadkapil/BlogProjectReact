@@ -23,13 +23,12 @@ const AuthorPostsPage = () => {
         fetch('/blogs.json')
             .then((res) => res.json())
             .then((data) => {
-                // ✅ Fetch only posts by this author
+                // Fetch only posts by this author
                 setBlogs(data.filter(blog => blog.authorID === authorID));
             })
             .catch(console.error);
     }, [authorID]);
 
-    // ✅ Use memo to avoid recalculating pages
     const totalPages = useMemo(
         () => Math.ceil(blogs.length / POSTS_PER_PAGE),
         [blogs]
@@ -55,24 +54,32 @@ const AuthorPostsPage = () => {
                 Posts by {author.name}
             </h1>
 
-            <div className="grid gap-4 md:grid-cols-3">
-                {visibleBlogs.map((blog) => (
-                    <BlogCard key={blog.id} blog={blog} />
-                ))}
-            </div>
+            {blogs.length === 0 ? (
+                <h6 className="text-center text-3xl text-gray-400 py-20">
+                    No post yet...! 😶
+                </h6>
+            ) : (
+                <>
+                    <div className="grid gap-4 md:grid-cols-3">
+                        {visibleBlogs.map((blog) => (
+                            <BlogCard key={blog.id} blog={blog} />
+                        ))}
+                    </div>
 
-            {totalPages > 1 && (
-                <div className="flex justify-center mt-6 gap-2">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                        <button
-                            key={page}
-                            onClick={() => setCurrentPage(page)}
-                            className={`btn btn-sm ${currentPage === page ? 'btn-primary' : 'btn-outline'}`}
-                        >
-                            {page}
-                        </button>
-                    ))}
-                </div>
+                    {totalPages > 1 && (
+                        <div className="flex justify-center mt-6 gap-2">
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                                <button
+                                    key={page}
+                                    onClick={() => setCurrentPage(page)}
+                                    className={`btn btn-sm ${currentPage === page ? 'btn-primary' : 'btn-outline'}`}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </>
             )}
 
             <div className="mt-10 text-right">

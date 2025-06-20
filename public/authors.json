@@ -154,5 +154,32 @@
         "about": "Exploring the world of machine learning, one project at a time.",
         "details": "My passion lies in combining storytelling with data and code.",
         "isActive": true
+    },
+    {
+        "authorID": "guest",
+        "name": "Guest User",
+        "work": "Exploring as a Reader",
+        "profession": "Visitor",
+        "company": "N/A",
+        "designation": "Guest",
+        "picA": "/default-avatar.png",
+        "github": "",
+        "linkedin": "",
+        "gmail": "",
+        "insta": "",
+        "fb": "",
+        "youtube": "",
+        "spotify": "",
+        "showGithub": true,
+        "showLinkedIn": true,
+        "showGmail": false,
+        "showInsta": true,
+        "showFb": false,
+        "showYoutube": true,
+        "showSpotify": false,
+        "about": "You're browsing as a guest. Sign in to access full features and personalize your experience.",
+        "details": "Guest users have limited access to content and features. Create an account to unlock more!",
+        "isActive": true
     }
+    
 ]

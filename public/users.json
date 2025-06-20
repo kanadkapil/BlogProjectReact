@@ -40,5 +40,13 @@
         "password": "meera123",
         "authorID": "5",
         "isActive": true
+    },
+    {
+        "id": "guest01",
+        "email": "guest@x.com",
+        "password": "x123",
+        "authorID": "guest",
+        "isActive": true
     }
+    
 ]

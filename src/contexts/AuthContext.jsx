@@ -16,17 +16,26 @@ export const AuthProvider = ({ children }) => {
                 authorID: parsedUser.authorID,
                 name: parsedUser.name,
                 picA: parsedUser.picA,
+                profession: parsedUser.profession,
+                designation: parsedUser.designation,
                 // add other author fields you need
             });
         }
     }, []);
 
-    // 🔐 Login function
-    const login = async (email, password) => {
+    // 🔐 Login function with case-insensitive email and remember me
+    const login = async (email, password, remember = false) => {
         try {
             const usersRes = await fetch('/users.json');
             const users = await usersRes.json();
-            const match = users.find(user => user.email === email && user.password === password && user.isActive);
+            const normalizedEmail = email.toLowerCase();
+
+            const match = users.find(
+                user =>
+                    user.email.toLowerCase() === normalizedEmail &&
+                    user.password === password &&
+                    user.isActive
+            );
 
             if (!match) {
                 return { success: false, message: 'Invalid credentials or inactive user' };
@@ -51,7 +60,10 @@ export const AuthProvider = ({ children }) => {
                 // add other needed fields here
             });
 
-            localStorage.setItem('user', JSON.stringify(fullUser));
+            if (remember) {
+                localStorage.setItem('user', JSON.stringify(fullUser));
+            }
+
             return { success: true };
         } catch (err) {
             console.error('Login error:', err);
