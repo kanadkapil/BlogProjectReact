@@ -1,0 +1,44 @@
+[
+    {
+        "id": "u01",
+        "email": "kanad.kapil@gmail.com",
+        "password": "kanad123",
+        "authorID": "01",
+        "isActive": true
+    },
+    {
+        "id": "u1",
+        "email": "ariadevlin@gmail.com",
+        "password": "aria123",
+        "authorID": "1",
+        "isActive": true
+    },
+    {
+        "id": "u2",
+        "email": "jayp@gmail.com",
+        "password": "jay123",
+        "authorID": "2",
+        "isActive": true
+    },
+    {
+        "id": "u3",
+        "email": "sana.khan.dev@gmail.com",
+        "password": "sana123",
+        "authorID": "3",
+        "isActive": true
+    },
+    {
+        "id": "u4",
+        "email": "rohancodes@gmail.com",
+        "password": "rohan123",
+        "authorID": "4",
+        "isActive": true
+    },
+    {
+        "id": "u5",
+        "email": "meera.joshi.ai@gmail.com",
+        "password": "meera123",
+        "authorID": "5",
+        "isActive": true
+    }
+]
