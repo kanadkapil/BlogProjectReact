@@ -33,9 +33,9 @@ const Navbar = () => {
         isActive ? 'bg-lime-600 text-black font-semibold rounded-md px-3 py-1' : 'px-3 py-1';
 
     return (
-        <div className="navbar backdrop-blur-sm bg-black/30 shadow-md z-50 sticky top-0 px-4">
+        <div className="navbar backdrop-blur-sm bg-black/30 shadow-md z-50 sticky top-0 px-4 ">
             {/* Desktop Left: Logo */}
-            <div className="flex-1 hidden sm:flex">
+            <div className="flex-1 hidden sm:flex ">
                 <Link to="/" className="btn btn-ghost normal-case text-lg sm:text-3xl">📝 Blog</Link>
             </div>
 
@@ -149,7 +149,7 @@ const Navbar = () => {
                     </div>
 
                 ) : (
-                    <Link to="/login" className="btn btn-sm btn-outline">Sign In</Link>
+                    <Link to="/login" className="btn btn-sm btn-outline text-black bg-cyan-600">Sign In</Link>
                 )}
             </div>
 

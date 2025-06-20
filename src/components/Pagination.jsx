@@ -15,7 +15,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 <button
                     key={page}
                     onClick={() => onPageChange(page)}
-                    className={`btn btn-sm ${currentPage === page ? 'btn-primary' : 'btn-outline'
+                    className={`btn btn-sm ${currentPage === page ? 'bg-lime-600 text-black' : 'bg-zinc-900 text-white'
                         }`}
                 >
                     {page}
@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             ))}
 
             <button
-                className="btn btn-sm btn-outline"
+                className="btn btn-sm "
                 onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
             >
