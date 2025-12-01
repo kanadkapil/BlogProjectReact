@@ -10,8 +10,8 @@ const Navbar = () => {
     const { user, authorData, logout } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    // Search State
-    const [searchQuery, setSearchQuery] = useState('');
+    // Search State - Initialize from URL
+    const [searchQuery, setSearchQuery] = useState(new URLSearchParams(location.search).get('search') || '');
 
     // Enforce Dark Mode
     useEffect(() => {
@@ -39,26 +39,37 @@ const Navbar = () => {
         loadData();
     }, []);
 
-    // Search Logic - Update URL
+    // Sync State FROM URL (Handle Back Button / Reload)
+    useEffect(() => {
+        const query = new URLSearchParams(location.search).get('search') || '';
+        if (query !== searchQuery) {
+            setSearchQuery(query);
+        }
+    }, [location.search]);
+
+    // Sync URL FROM State (Handle Typing)
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            if (searchQuery) {
-                navigate(`/?search=${encodeURIComponent(searchQuery)}`);
-            } else {
-                // If search query is empty, remove the search param
-                navigate(location.pathname);
+            const currentQuery = new URLSearchParams(location.search).get('search') || '';
+            
+            if (searchQuery !== currentQuery) {
+                if (searchQuery) {
+                    navigate(`/?search=${encodeURIComponent(searchQuery)}`);
+                } else if (path === '/') {
+                    // Only clear URL param if on home page
+                    navigate('/');
+                }
             }
         }, 300);
 
         return () => clearTimeout(delayDebounceFn);
-    }, [searchQuery, navigate, location.pathname]);
+    }, [searchQuery, navigate]); // Removed location.pathname
 
     const getLinkClass = (isActive) =>
         isActive ? 'bg-lime-600 text-black font-semibold rounded-md px-3 py-1' : 'px-3 py-1';
 
     return (
         <div className="navbar backdrop-blur-sm bg-black/30 shadow-md z-50 sticky top-0 px-4 ">
-            {/* Desktop Left: Logo */}
             <div className="flex-1 hidden sm:flex items-center gap-4">
                 <Link to="/" className="btn btn-ghost normal-case text-lg sm:text-3xl">📝 Blog</Link>
                 
