@@ -7,13 +7,12 @@ const Login = () => {
     const [email, setEmail] = useState('guest@x.com'); // Sample email
     const [password, setPassword] = useState('x123');  // Sample password
     const [showPassword, setShowPassword] = useState(false);
-    const [remember, setRemember] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await login(email, password, remember);
+        const result = await login(email, password);
         if (result.success) {
             navigate('/');
         } else {
@@ -51,16 +50,6 @@ const Login = () => {
                         {showPassword ? '🙈' : '👁️'}
                     </button>
                 </div>
-
-                <label className="flex items-center text-sm gap-2">
-                    <input
-                        type="checkbox"
-                        checked={remember}
-                        onChange={e => setRemember(e.target.checked)}
-                        className="checkbox checkbox-sm"
-                    />
-                    Remember Me
-                </label>
 
                 {error && <p className="text-red-500 text-sm">{error}</p>}
 

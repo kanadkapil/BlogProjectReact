@@ -23,8 +23,8 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // 🔐 Login function with case-insensitive email and remember me
-    const login = async (email, password, remember = false) => {
+    // 🔐 Login function with case-insensitive email
+    const login = async (email, password) => {
         try {
             const usersRes = await fetch('/users.json');
             const users = await usersRes.json();
@@ -60,9 +60,8 @@ export const AuthProvider = ({ children }) => {
                 // add other needed fields here
             });
 
-            if (remember) {
-                localStorage.setItem('user', JSON.stringify(fullUser));
-            }
+            // Always save to localStorage
+            localStorage.setItem('user', JSON.stringify(fullUser));
 
             return { success: true };
         } catch (err) {
